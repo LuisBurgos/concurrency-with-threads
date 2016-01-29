@@ -1,5 +1,3 @@
-# Sistemas Distribuidos
-
 ## Ejercicio 5
 
 #### Estructura
