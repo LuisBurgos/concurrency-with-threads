@@ -2,14 +2,17 @@
  * Created by rober on 1/27/2016.
  */
 public class NewThread3 implements Runnable{
-    String name; //name of thread
-    Thread t;
-    NewThread3(String threadname){
+
+    public String name;
+    public Thread t;
+
+    public NewThread3(String threadname){
         name = threadname;
         t=new Thread(this, name);
         System.out.println("New thread: " + t);
-        t.start(); //Start the thread​
+        t.start();
     }
+
     //This is the entry point for thread.
     public void run(){
         try{
