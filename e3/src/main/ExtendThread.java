@@ -1,10 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Dominio;
-
 /**
  *
  * @author a13116349
@@ -12,7 +5,7 @@ package Dominio;
 public class ExtendThread {
 
     public static void main(String[] args) {
-        new NewThread2(); //Create a new thread
+        new NewThread2();
         try {
             for (int i = 5; i > 0; i--) {
                 System.out.println("Main thread: " + i);
