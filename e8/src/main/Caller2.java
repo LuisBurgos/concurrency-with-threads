@@ -1,5 +1,4 @@
-import java.util.logging.Level;
-import java.util.logging.Logger;
+package principal;
 
 /**
  *
@@ -7,27 +6,24 @@ import java.util.logging.Logger;
  */
 public class Caller2 implements Runnable {
 
-    public String mMessage;
-    public CallMe2 mTarget;
-    public Thread mThread;
+    String msg;
+    CallMe2 target;
+    Thread t;
+    
 
-    public Caller2(CallMe2 target, String message) {
-        mTarget = target;
-        mMessage = message;
-        mThread = new Thread(this);
-        mThread.start();
-        try {
-            mThread.join();
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Caller2.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public Caller2(CallMe2 targ, String s) {
+        target = targ;
+        msg = s;
+        t = new Thread(this);
+        t.start();
     }
 
     //synchorize calls to call()
     @Override
     public void run() {
-        synchronized (mTarget) { //synchonized block
-            mTarget.call(mMessage);
+        synchronized (target) { //synchonized block
+            target.call(msg);
         }
     }
+
 }
